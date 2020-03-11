@@ -1,844 +1,687 @@
 
 <!doctype html>
-<html>
-
+<html lang="pt-br">
 <head>
-  <meta charset="utf-8">
-  <br>
-  <meta http-equiv="Content-Type" content="text/html charset=UTF-8" />
-  <!-- utf-8 works for most cases -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- Forcing initial-scale shouldn't be necessary -->
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <!-- Use the latest (edge) version of IE rendering engine -->
+<meta charset="UTF-8">
+<title>Estadão</title>
+<link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900&display=swap" rel="stylesheet">
+	
+	
+<style>
 
-  <title>Estadão</title>
-  <!-- The title tag shows in email notifications, like Android 4.4. -->
-  <!-- Please use an inliner tool to convert all CSS to inline as inpage or external CSS is removed by email clients -->
-  <!-- important in CSS is used to prevent the styles of currently inline CSS from overriding the ones mentioned in media queries when corresponding screen sizes are encountered -->
-  <!-- CSS Reset -->
-  <style type="text/css">
-    /* What it does: Remove spaces around the email design added by some email clients. */
+/* What it does: Remove spaces around the email design added by some email clients. */
     /* Beware: It can remove the padding / margin and add a background color to the compose a reply window. */
-    html,
-    body {
-      margin: 0 !important;
-      padding: 0 !important;
-      height: 100% !important;
-      width: 100% !important;
-    }
+html, body {
+    margin: auto!important;
+    padding: 0 !important;
+    height: 100% !important;
+    width: 100% !important;
+    display: block !important;
+	
+}
+.fullcolor {
+    width: 100%;
+    text-align: center;
+}
+/* What it does: Stops email clients resizing small text. */
+* {
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+/* What it does: Forces Outlook.com to display emails full width. */
+.ExternalClass {
+    width: 100%;
+}
+/* What is does: Centers email on Android 4.4 */
+div[style*="margin: 16px 0"] {
+    margin: 0 !important;
+}
+/* What it does: Stops Outlook from adding extra spacing to tables. */
+table, td {
+    -mso-table-lspace: 0pt !important;
+    -mso-table-rspace: 0pt !important;
+}
+/* What it does: Fixes webkit padding issue. Fix for Yahoo mail table alignment bug. Applies table-layout to the first 2 tables then removes for anything nested deeper. */
+table {
+    border-spacing: 0 !important;
+    border-collapse: collapse !important;
+    table-layout: fixed !important;
+    margin: 0 auto !important;
+}
+table table table {
+    table-layout: auto;
+}
+	strong{
+		font-weight: 900;
+		-webkit-font-smoothing: antialiased;
+	}
+/* What it does: Uses a better rendering method when resizing images in IE. */
+img {
+    -ms-interpolation-mode: bicubic;
+}
 
-    .fullcolor {
-      width: 100%;
-      text-align: center;
-    }
+/* 3 equal-width columns Layout Pattern CSS */
+@media only screen and (max-width: 599px) {
+td[class="pattern"] table {
+    width: 100%;
+}
+td[class="pattern"] .col {
+    width: 33%;
+}
+}
 
-    /* What it does: Stops email clients resizing small text. */
-    * {
-      -ms-text-size-adjust: 100%;
-      -webkit-text-size-adjust: 100%;
-    }
+@media only screen and (max-width: 500px) {
+td[class="pattern"] .col {
+    width: 100%;
+    display: block;
+}
+td[class="pattern"] .col-left, td[class="pattern"] .col-mid {
+    margin-bottom: 20px;
+}
+}
+/* What it does: Overrides styles added when Yahoo's auto-senses a link. */
+.yshortcuts a {
+    border-bottom: none !important;
+}
+/* What it does: Another work-around for iOS meddling in triggered links. */
+a[x-apple-data-detectors] {
+    color: inherit !important;
+}
+/* style para menu */
 
-    /* What it does: Forces Outlook.com to display emails full width. */
-    .ExternalClass {
-      width: 100%;
-    }
+.main_cta img {
+    /*width: auto; */
+    height: auto !important;
+}
+.main_nav a {
+    font-family: 'Lato', Arial, Trebuchet, Calibri, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 15px 5px;
+}
+.main_nav a:hover {
+    background-color: #F2F0F0;
+    font-family: 'Lato', Arial, Trebuchet, Calibri, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 15px 5px;
+}
 
-    /* What is does: Centers email on Android 4.4 */
-    div[style*="margin: 16px 0"] {
-      margin: 0 !important;
-    }
+/* Reduce Navigation Pattern CSS */
+@media only screen and (max-width: 345px) {
+a[class="nav4"] {
+    display: none;
+}
+font[class="space4"] {
+    display: none;
+}
+td[class="main_nav"] td {
+    padding: 15px 0px !important;
+}
+}
 
-    /* What it does: Stops Outlook from adding extra spacing to tables. */
-    table,
-    td {
-      mso-table-lspace: 0pt !important;
-      mso-table-rspace: 0pt !important;
-    }
+@media only screen and (max-width: 465px) {
+a[class="nav5"] {
+    display: none;
+}
+font[class="space5"] {
+    display: none;
+}
+td[class="main_nav"] td {
+    padding: 15px 0px !important;
+}
+}
 
-    /* What it does: Fixes webkit padding issue. Fix for Yahoo mail table alignment bug. Applies table-layout to the first 2 tables then removes for anything nested deeper. */
-    table {
-      border-spacing: 0 !important;
-      border-collapse: collapse !important;
-      table-layout: fixed !important;
-      margin: 0 auto !important;
-    }
+@media only screen and (max-width: 500px) {
+a[class="nav5"] {
+    display: none;
+}
+font[class="space5"] {
+    display: none;
+}
+td[class="main_nav"] td {
+    padding: 15px 0px;
+    font-size: 14px !important;
+}
+}
 
-    table table table {
-      table-layout: auto;
-    }
-
-    /* What it does: Uses a better rendering method when resizing images in IE. */
-    img {
-      -ms-interpolation-mode: bicubic;
-    }
-
-    /* 3 equal-width columns Layout Pattern CSS */
-    @media only screen and (max-width: 599px) {
-      td[class="pattern"] table {
-        width: 100%;
-      }
-
-      td[class="pattern"] .col {
-        width: 33%;
-      }
-    }
-
-    @media only screen and (max-width: 500px) {
-      td[class="pattern"] .col {
-        width: 100%;
-        display: block;
-      }
-
-      td[class="pattern"] .col-left,
-      td[class="pattern"] .col-mid {
-        margin-bottom: 20px;
-      }
-    }
-
-    /* What it does: Overrides styles added when Yahoo's auto-senses a link. */
-    .yshortcuts a {
-      border-bottom: none !important;
-    }
-
-    /* What it does: Another work-around for iOS meddling in triggered links. */
-    a[x-apple-data-detectors] {
-      color: inherit !important;
-    }
-  </style>
-  <!-- Progressive Enhancements -->
-  <style type="text/css">
-    /* style para menu */
-
-    .main_cta img {
-      /*width: auto; */
-      height: auto !important;
-    }
-
-    .main_nav a {
-      font-family: 'Lato', Arial, Trebuchet, Calibri, sans-serif;
-      font-size: 14px;
-      font-weight: bold;
-      text-transform: uppercase;
-      text-decoration: none;
-      padding: 15px 5px;
-    }
-
-    .main_nav a:hover {
-      background-color: #F2F0F0;
-      font-family: 'Lato', Arial, Trebuchet, Calibri, sans-serif;
-      font-size: 14px;
-      font-weight: bold;
-      text-transform: uppercase;
-      text-decoration: none;
-      padding: 15px 5px;
-    }
-
-    /* Reduce Navigation Pattern CSS */
-    @media only screen and (max-width: 345px) {
-      a[class="nav4"] {
-        display: none;
-      }
-
-      font[class="space4"] {
-        display: none;
-      }
-
-      td[class="main_nav"] td {
-        padding: 15px 0px;
-         !important;
-      }
-    }
-
-    @media only screen and (max-width: 465px) {
-      a[class="nav5"] {
-        display: none;
-      }
-
-      font[class="space5"] {
-        display: none;
-      }
-
-      td[class="main_nav"] td {
-        padding: 15px 0px;
-         !important;
-      }
-    }
-
-    @media only screen and (max-width: 500px) {
-      a[class="nav5"] {
-        display: none;
-      }
-
-      font[class="space5"] {
-        display: none;
-      }
-
-      td[class="main_nav"] td {
-        padding: 15px 0px;
-        font-size: 14px;
-         !important;
-      }
-    }
-
-    @media only screen and (max-width: 599px) {
-      a[class="nav6"] {
-        display: none;
-      }
-
-      font[class="space6"] {
-        display: none;
-      }
-
-      td[class="main_nav"] td {
-        padding: 15px 10px;
-        font-size: 14px;
-         !important;
-      }
-
-      @media screen and (min-width:600px) {
-        td[class="main_nav"] td {
-          width: auto;
-        }
-      }
+@media only screen and (max-width: 599px) {
+a[class="nav6"] {
+    display: none;
+}
+font[class="space6"] {
+    display: none;
+}
+td[class="main_nav"] td {
+    padding: 15px 10px;
+    font-size: 14px !important;
+}
+@media screen and (min-width:600px) {
+td[class="main_nav"] td {
+width: auto;
+}
+}
 
       /* fim style menu */
       /* What it does: Hover styles for buttons */
       /*imagem centro */
       /* Image Center Crop Pattern CSS */
       @media only screen and (max-width: 599px) {
-        td[class="centro"] {
-          position: relative;
-          overflow: hidden;
-          width: 100%;
-          height: 54px;
-        }
-
-        td[class="centro"] img {
-          position: absolute;
-          top: 0;
-          left: 50%;
-          margin-left: -300px;
-        }
-      }
+td[class="centro"] {
+position: relative;
+overflow: hidden;
+width: 100%;
+height: 54px;
+}
+td[class="centro"] img {
+position: absolute;
+top: 0;
+left: 50%;
+margin-left: -300px;
+}
+}
 
 
       /* Media Queries */
       @media screen and (max-width: 600px) {
-        .email-container {
-          width: 100% !important;
-        }
+.email-container {
+width: 100% !important;
+}
 
         /* What it does: Forces elements to resize to the full width of their container. Useful for resizing images beyond their max-width. */
-        .fluid,
-        .fluid-centered {
-          max-width: 100% !important;
-          height: auto !important;
-          margin-left: auto !important;
-          margin-right: auto !important;
-        }
+        .fluid, .fluid-centered {
+max-width: 100% !important;
+height: auto !important;
+margin-left: auto !important;
+margin-right: auto !important;
+}
 
         /* And center justify these ones. */
         .fluid-centered {
-          margin-left: auto !important;
-          margin-right: auto !important;
-        }
+margin-left: auto !important;
+margin-right: auto !important;
+}
 
         /* What it does: Forces table cells into full-width rows. */
-        .stack-column,
-        .stack-column-center {
-          display: block !important;
-          width: 100% !important;
-          max-width: 100% !important;
-          direction: ltr !important;
-        }
+        .stack-column, .stack-column-center {
+display: block !important;
+width: 100% !important;
+max-width: 100% !important;
+direction: ltr !important;
+}
 
         /* And center justify these ones. */
         .stack-column-center {
-          text-align: center !important;
-        }
+text-align: center !important;
+}
 
         /* What it does: Generic utility class for centering. Useful for images, buttons, and nested tables. */
         .center-on-narrow {
-          text-align: center !important;
-          display: block !important;
-          margin-left: auto !important;
-          margin-right: auto !important;
-          float: none !important;
-        }
-
-        table.center-on-narrow {
-          display: inline-block !important;
-        }
-
-        btn-assine {
-          border-radius: 5px;
-          background: #29CD01;
-          text-align: center;
-          border: 15px solid #29CD01;
-          padding: 0 10px;
-          color: #ffffff;
-          font-family: 'Lato', Arial, Trebuchet, Calibri, sans-serif;
-          font-size: 17px;
-          text-align: center;
-          text-decoration: none;
-          display: block;
-          border-radius: 30px;
-          font-weight: bold;
-          text-transform: uppercase;
-        }
-      }
-
-      @media only screen and (max-width:600px) {
-        .full-width {
-          width: 95% !important;
-          float: none !important;
-          min-width: 80% !important;
-          margin: 0 auto !important;
-          max-width: 80%;
-        }
-
-        .full-block {
-          display: block !important;
-        }
-
-        .image-full-width,
-        .image-full-width img {
-          width: 100% !important;
-          height: auto !important;
-          max-width: 100% !important;
-        }
-
-        .full-width.fix-800 {
-          min-width: auto !important;
-        }
-      }
-
-      @media screen and (max-width:599px) {
-        .fullcolor {
-          width: 100%;
-          height: 40px;
-        }
-
-        .fullcolor {
-          font-size: 20px
-        }
-      }
-  </style>
-	<link href="https://fonts.googleapis.com/css?family=Lato:400,700,900&display=swap" rel="stylesheet">
+text-align: center !important;
+display: block !important;
+margin-left: auto !important;
+margin-right: auto !important;
+float: none !important;
+}
+table.center-on-narrow {
+display: inline-block !important;
+}
+btn-assine {
+border-radius: 5px;
+background: #29CD01;
+text-align: center;
+border: 15px solid #29CD01;
+padding: 0 10px;
+color: #ffffff;
+font-family: 'Lato', Arial, Trebuchet, Calibri, sans-serif;
+font-size: 17px;
+text-align: center;
+text-decoration: none;
+display: block;
+border-radius: 30px;
+font-weight: bold;
+text-transform: uppercase;
+}
+}
+@media screen and (max-width:599px) {
+.fullcolor {
+width: 100%;
+height: 40px;
+font-size: 20px;
+}
+}
+@media only screen and (max-width:600px) {
+.full-width {
+width: 95% !important;
+float: none !important;
+min-width: 80% !important;
+margin: 0 auto !important;
+max-width: 80%;
+}
+.full-block {
+display: block !important;
+}
+.image-full-width, .image-full-width img {
+width: 100% !important;
+height: auto !important;
+max-width: 100% !important;
+}
+.full-width.fix-800 {
+min-width: auto !important;
+}
+}
+}
+</style>
+	
+	<!--[if mso]>
+    <style type="text/css">
+   span{
+	font-family: arial, sans-serif!important;
+	}
+p{
+	font-family: arial, sans-serif!important;
+	}
+a{
+	font-family: arial, sans-serif!important;
+	}
+td{
+	font-family: arial, sans-serif!important;
+	}
+    </style>
+<![endif]-->
 </head>
 
-<body bgcolor="#F5F5F5" width="100%" style="margin: 0;">
-  <!-- tabela 1 (mãe) -->
-  <table bgcolor="#F5F5F5" cellpadding="0" cellspacing="0" border="0" height="100%" width="100%">
-    <tr>
-      <td>
-        <center style="width: 100%;">
-
-          <!-- tabela 2  -->
-
-          <table align="center" width="600" class="email-container" cellpadding="0" cellspacing="0">
-            <tr>
-              <td>
-                <!-- TOPO: INICIO -->
-
-                <table bgcolor="#ffffff" align="center" width="600" height="87px" class="email-container"
-                  cellpadding="0" cellspacing="0">
-                  <tbody>
-                    <tr>
-                      <td style="font-size: 22px;" height="20px">&nbsp;<br></td>
-                    </tr>
-                    <tr>
-                      <td align="center" bgcolor="#FFFFFF" style="text-align: center"><a
-                          href="https://assine.estadao.com.br/google?utm_source=action-sales:email-mkt&utm_medium=email-mkt&utm_campaign=AlwaysOn:c&utm_content=link:briefing01-fevereiro20::01-topo&utm_term=::::" target="_blank"><img
-                            src="https://assine.estadao.com.br/mkt/Briefings-Novembro-Base/logo-estadao.png"
-                            alt="Estadão" title="Estadão" border="0" display="block"></a></td>
-                    </tr>
-                    <tr>
-                      <td style="font-size: 22px;" height="20px">&nbsp;<br></td>
-                    </tr>
-                  </tbody>
-                </table>
-
-                <!-- TOPO: FIM -->
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <!--imagem + titulo -->
-
-                <table cellspacing="0" cellpadding="0" border="0" align="center" bgcolor="#FFFFFF" width="600"
-                  class="email-container">
-                  <tr style=" border-bottom: dotted 1px #a7a7a7; border-top:dotted 1px #a7a7a7; ">
-                    <td valign="middle" bgcolor="#ffffff" style="text-align: center; padding: 10px 0px; ">
-                      <font
-                        style="font-family: 'Lato', Arial, Trebuchet, Calibri, sans-serif; font-size: 12px;  color: #282828; font-weight: normal;-webkit-font-smoothing:antialiased; text-align: center; text-transform: uppercase; ">
-                        <strong>Assine: </strong><span style="color: #282828"> &ensp;<a
+<body style="background-color: #f5f5f5; align-items: center; margin-left: auto; margin-right: auto; align-content: center;">
+	
+<table style="background-color: #f5f5f5; border: 0; height: 100%; width: 100%; margin-left: auto; margin-right: auto;" >
+  <tr>
+  
+  <td style="margin-left: auto; margin-right: auto;">
+    
+    <table style="background-color: #ffffff; margin-left: auto; margin-right: auto; width: 600px; border-spacing: 0; border-collapse: collapse;"  class="email-container">
+      <tr>
+        <td>
+          
+          <table style="background-color: #ffffff; margin-left: auto; margin-right: auto; width: 600px; border-spacing: 0; border-collapse: collapse;" class="email-container">
+            <tbody>
+              <tr>
+                <td style="font-size: 22px; height: 20px ">&nbsp;<br></td>
+              </tr>
+              <tr>
+                <td  style="text-align: center; margin-left: auto; margin-right: auto; background-color: #ffffff "><a
+                          href="https://assine.estadao.com.br/google" target="_blank"> <img src="https://assine.estadao.com.br/mkt/Briefings-Novembro-Base/logo-estadao.png"
+                            alt="Estadão" title="Estadão" style="margin: auto; display: block" ></a></td>
+              </tr>
+              <tr>
+                <td style="font-size: 22px; height: 20px" >&nbsp;<br></td>
+              </tr>
+            </tbody>
+          </table>
+          
+          </td>
+      </tr>
+      <tr>
+        <td>
+          
+          <table style="background-color: #ffffff; margin-left: auto; margin-right: auto; width: 600px; border-spacing: 0; border-collapse: collapse;" class="email-container">
+            <tr style=" border-bottom: dotted 1px #a7a7a7; border-top:dotted 1px #a7a7a7; ">
+              <td style="background-color: #ffffff; text-align: center; padding: 10px 5px; "><span
+                        style="font-family: 'Lato', Arial, Trebuchet, Calibri, sans-serif; font-size: 12px;  color: #282828; font-weight: normal;-webkit-font-smoothing:antialiased; text-align: center; text-transform: uppercase; "> <strong>Assine: </strong><span style="color: #282828"> &ensp;<a
                             style=" color: #282828; text-decoration: none; "
-                            href="https://assine.estadao.com.br/digitais?utm_source=action-sales:email-mkt&utm_medium=email-mkt&utm_campaign=AlwaysOn:c&utm_content=link:briefing01-fevereiro20::02-assine-digital&utm_term=::::"
+                            href="https://assine.estadao.com.br/digitais"
                             target="_blank"><u>Digital</u></a>&ensp;&ensp;<a
                             style=" color: #282828; text-decoration: none; "
-                            href="https://assine.estadao.com.br/impresso-em-casa?utm_source=action-sales:email-mkt&utm_medium=email-mkt&utm_campaign=AlwaysOn:c&utm_content=link:briefing01-fevereiro20::03-assine-impresso&utm_term=::::"
-                            target="_blank"><u>Impresso</u></a></span>&ensp;|&ensp;</font>
-                      <font
-                        style="font-family: 'Lato', Arial, Trebuchet, Calibri, sans-serif; font-size: 12px;  color: #282828; font-weight: normal;-webkit-font-smoothing:antialiased; text-align: center; text-transform: uppercase; ">
-                        Ligue e assine: <a style=" color: #282828; text-decoration: none;" href="tel:08000149000"><strong><span style="color: #282828; text-decoration: underline">0800 014
-						  9000</span></strong></a> &ensp;|&ensp; </font>
-                      <font
-                        style="font-family: 'Lato', Arial, Trebuchet, Calibri, sans-serif; font-size: 12px;  color: #282828; font-weight: normal;-webkit-font-smoothing:antialiased; text-align: center; text-transform: uppercase; ">
-                        <img src="https://assine.estadao.com.br/mkt/email-oferta01-broadcast/icon-whats-13x13.jpg" alt="Whatsapp" title="Whatsapp"> 
-<strong><span style="color: #282828"> <a style=" color: #282828; text-decoration: none;" href="https://wa.me/5511992482333" target="_blank"><u>Whatsapp</u></a></span></strong></font>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td><br>
-                      </td>
-                  </tr>
-                  <tr>
-                    <td bgcolor="#ffffff" class="full-width-image" align="center"><a href="https://assine.estadao.com.br/subscribe/estadao-impresso-em-casa-2190-netflix-am300897?utm_source=action-sales:email-mkt&utm_medium=email-mkt&utm_campaign=AlwaysOn:c&utm_content=link:briefing01-fevereiro20::04-banner-principal-netflix&utm_term=::::" target="_blank"><img src="http://assine.estadao.com.br/mkt/briefing01-fevereiro20/AM300897_01.jpg"
-                          alt="Va além da notícia" width="600" style="width: 100%; max-width: 560px; height: auto;"
-                          title="Va além da notícia" border="0" align="center" display="block"></a></td>
-                  </tr>
-                  <tr>
-                    <td bgcolor="#FFFFFF" style="text-align: center;">
-                      <font
-                        style="font-family: 'Lato', Arial, Trebuchet, Calibri, sans-serif; letter-spacing:0px;font-size: 20px;  color: #006393; font-weight: normal;-webkit-font-smoothing:antialiased;text-align: center; text-transform: uppercase; ">
-                        <strong><br>
-                          O que o Estadão tem para você:</strong> </font><br>
-                      <br>
-                    </td>
-                  </tr>
-                </table>
-
-                <!--imagem + titulo FIM -->
-              </td>
-            </tr>
-
-            <!-- miolo -->
-            <!--linha duas colunas -->
-            <tr>
-              <td bgcolor="#ffffff" align="center" valign="top" style="padding: 0 25px 0px 25px;">
-                <table cellspacing="0" cellpadding="0" border="0" width="100%">
-                  <tr>
-
-                    <!--lado esquerdo -->
-                    <td bgcolor="#FFFFFF" width="50%" class="stack-column-center"
-                      style="border-top: 10px solid #ffffff;">
-                      <table cellspacing="0" cellpadding="0" border="0">
-                        <tr>
-                          <td width="50%" align="center" style="padding-left: 4px; padding-right: 4px"><img
-                              src="https://assine.estadao.com.br/mkt/Base-modelo-email-fev2019/icone-1.png"
-                              alt="Estadão" title="Estadão" border="0" display="block"> <br>
-                            <br>
-                            <font
-                              style="font-family: 'Lato', Arial, Trebuchet, Calibri, sans-serif; font-size: 15px;  color: #276693; font-weight: normal;-webkit-font-smoothing:antialiased; text-align: center; ">
-                              <strong> Informação de credibilidade</strong></font><br>
-                            <font
-                              style="font-family: 'Lato', Arial, Trebuchet, Calibri, sans-serif; font-size: 13px;  color: #414141; font-weight: normal;-webkit-font-smoothing:antialiased; text-align: center; ">
-                              Ganhador de vários prêmios, o Estadão tem a credibilidade
-                              que você procura.</font>
-                          </td>
-                          <td width="50%" align="center" style="padding-left: 4px; padding-right: 4px"><img
-                              src="https://assine.estadao.com.br/mkt/Base-modelo-email-fev2019/icone-2.png"
-                              alt="Estadão" title="Estadão" border="0" display="block"> <br>
-                            <br>
-                            <font
-                              style="font-family: 'Lato', Arial, Trebuchet, Calibri, sans-serif; font-size: 15px;  color: #276693; font-weight: normal;-webkit-font-smoothing:antialiased; text-align: center; ">
-                              <strong>Colunistas exclusivos</strong></font><br>
-                            <font
-                              style="font-family: 'Lato', Arial, Trebuchet, Calibri, sans-serif; font-size: 13px;  color: #414141; font-weight: normal;-webkit-font-smoothing:antialiased; text-align: center; ">
-                              Conteúdos exclusivos para oferecer variedade de pontos de
-                              vista.</font>
-                          </td>
-                        </tr>
-                      </table>
-                    </td>
-
-                    <!-- lado direito -->
-                    <td bgcolor="#FFFFFF" width="50%" class="stack-column-center"
-                      style="border-top: 10px solid #ffffff;">
-                      <table cellspacing="0" cellpadding="0" border="0">
-                        <tr>
-                          <td width="50%" align="center" style="padding-left: 4px; padding-right: 4px"><img
-                              src="https://assine.estadao.com.br/mkt/Base-modelo-email-fev2019/icone-3.png"
-                              alt="Estadão" title="Estadão" border="0" display="block"> <br>
-                            <br>
-                            <font
-                              style="font-family: 'Lato', Arial, Trebuchet, Calibri, sans-serif; font-size: 15px;  color: #276693; font-weight: normal;-webkit-font-smoothing:antialiased; text-align: center; ">
-                              <strong>Acesso multiplataforma</strong></font><br>
-                            <font
-                              style="font-family: 'Lato', Arial, Trebuchet, Calibri, sans-serif; font-size: 13px;  color: #414141; font-weight: normal;-webkit-font-smoothing:antialiased; text-align: center; ">
-                              Digital ou impresso, esteja sempre com o melhor do Estadão
-                              onde estiver.</font>
-                          </td>
-                          <td width="50%" align="center" style="padding-left: 4px; padding-right: 4px"><img
-                              src="https://assine.estadao.com.br/mkt/Base-modelo-email-fev2019/icone-4.png"
-                              alt="Estadão" title="Estadão" border="0" display="block"> <br>
-                            <br>
-                            <font
-                              style="font-family: 'Lato', Arial, Trebuchet, Calibri, sans-serif; font-size: 15px;  color: #276693; font-weight: normal;-webkit-font-smoothing:antialiased; text-align: center; ">
-                              <strong>Suspensão temporária</strong></font><br>
-                            <font
-                              style="font-family: 'Lato', Arial, Trebuchet, Calibri, sans-serif; font-size: 13px;  color: #414141; font-weight: normal;-webkit-font-smoothing:antialiased; text-align: center; ">
-                              Muitas facilidades para você resolver tudo o que precisa no
-                              Meu Estadão.</font>
-                          </td>
-                        </tr>
-                      </table>
-                    </td>
-                  </tr>
-                </table>
-              </td>
-            </tr>
-            <!-- linha duas colunas: FIM -->
-            <tr>
-              <td bgcolor="#ffffff" style="border-bottom: dotted 1px #a7a7a7;"><br>
-                &nbsp; </td>
-            </tr>
-            <!--linha duas colunas -->
-            <tr>
-            <td bgcolor="#ffffff" align="center" valign="top" style="padding: 0 25px 0px 25px;"><table cellspacing="0" cellpadding="0" border="0" width="100%">
-                <tr> 
-                  <td bgcolor="#FFFFFF" width="50%" class="stack-column-center"
-                      style="border-top: 10px solid #ffffff;"><table cellspacing="0" cellpadding="0" border="0">
-                      <tr><td align="center"><font style="font-family: 'Lato', Arial, Trebuchet, Calibri, sans-serif; font-size: 24px; mso-height-rule: exactly; color: #212121; text-align: center; text-transform: uppercase;"> <strong>Impresso</strong></font><br><font style="font-family: 'Lato', Arial, Trebuchet, Calibri, sans-serif; font-size: 14px; mso-height-rule: exactly; color: #212121; text-align: center; text-transform: uppercase;">Fins de semana + Digital</font></td>
-                    </tr>
-                      <tr>
-                        <td><img width="273"
-                              src="https://assine.estadao.com.br/mkt/Brindes-Base-fev-19/miolo-imp-dig-26.jpg"
-                              alt="Estadão" title="Estadão" border="0" display="block"></td>
-                      </tr>
-                      <tr>
-                          <td align="center"><br>
-                            <font style="font-family: 'Lato',  Arial, Trebuchet, Calibri, sans-serif;font-size: 14px; mso-height-rule: exactly; color: #7D7D7D; text-align: center; "> 
-                              <strike> De R$ 56,90/mês</strike> <br>
-                              Por R$ <span style=" color: #212121; font-size: 28px"><b>21,90</b></span>/mês </font><br>
-                            <font style="font-family:  'Lato', Arial, Trebuchet, Calibri, sans-serif;font-size: 16px; mso-height-rule: exactly; color: #005f93; text-align: center;">62% de desconto por 1 ano</font> <br>
-                            <br>
-                          </td>
-                        </tr>
-                      <tr>
-                        <td><table class="btn-assine" cellspacing="0" cellpadding="0" border="0" align="center"
-                              style="margin: auto;">
-                            <tr>
-                              <td style=" border-radius: 5px; background: #005f93"><a
-                                    href="https://assine.estadao.com.br/subscribe/estadao-impresso-em-casa-2190-smartwatch-am300896?utm_source=action-sales:email-mkt&utm_medium=email-mkt&utm_campaign=AlwaysOn:c&utm_content=link:briefing01-fevereiro20::05-botao-oferta-01-smartwatch&utm_term=::::"
-                                    target="_blank"
-                                    style="background: #005F93; border: 5px solid #005F93; padding: 12px 10px 12px;color: #ffffff; font-family: 'Lato', Arial, Trebuchet, Calibri, sans-serif;font-size: 13px; text-align: center; text-decoration: none; display: block; border-radius: 5px; font-weight: bold; text-transform: uppercase;  -webkit-font-smoothing: antialiased; ">Assine Agora</a></td>
-                            </tr>
-                          </table></td>
-                      </tr>
-                    </table></td>
-                  <!--lado esquerdo -->
-                  <td bgcolor="#FFFFFF" width="50%" class="stack-column-center"
-                      style="border-top: 10px solid #ffffff;"><table cellspacing="0" cellpadding="0" border="0">
-                      <tr><td align="center"><font style="font-family: 'Lato', Arial, Trebuchet, Calibri, sans-serif; font-size: 24px; mso-height-rule: exactly; color: #212121; text-align: center; text-transform: uppercase;"> <strong>Impresso</strong></font><br><font style="font-family: 'Lato', Arial, Trebuchet, Calibri, sans-serif; font-size: 14px; mso-height-rule: exactly; color: #212121; text-align: center; text-transform: uppercase;">Fins de semana + Digital</font></td>
-                    </tr>
-                      <tr>
-                        <td><img width="273"
-                              src="https://assine.estadao.com.br/mkt/Brindes-Base-fev-19/miolo-imp-dig-21.jpg"
-                              alt="Estadão" title="Estadão" border="0" display="block"></td>
-                      </tr>
-                      <tr>
-                          <td align="center"><br>
-                            <font style="font-family: 'Lato',  Arial, Trebuchet, Calibri, sans-serif;font-size: 14px; mso-height-rule: exactly; color: #7D7D7D; text-align: center; "> 
-                              <strike> De R$ 56,90/mês</strike> <br>
-                              Por R$ <span style=" color: #212121; font-size: 28px"><b>21,90</b></span>/mês </font><br>
-                            <font style="font-family:  'Lato', Arial, Trebuchet, Calibri, sans-serif;font-size: 16px; mso-height-rule: exactly; color: #005f93; text-align: center;">62% de desconto por 1 ano</font> <br>
-                            <br>
-                          </td>
-                        </tr>
-                      <tr>
-                        <td><table class="btn-assine" cellspacing="0" cellpadding="0" border="0" align="center"
-                              style="margin: auto;">
-                            <tr>
-                              <td style=" border-radius: 5px; background: #005f93"><a href="https://assine.estadao.com.br/subscribe/estadao-impresso-em-casa-2190-centauro-am300899?utm_source=action-sales:email-mkt&utm_medium=email-mkt&utm_campaign=AlwaysOn:c&utm_content=link:briefing01-fevereiro20::06-botao-oferta-02-centauro&utm_term=::::"
-                                    target="_blank"
-                                    style="background: #005F93; border: 5px solid #005F93; padding: 12px 10px 12px;color: #ffffff; font-family: 'Lato', Arial, Trebuchet, Calibri, sans-serif;font-size: 13px; text-align: center; text-decoration: none; display: block; border-radius: 5px; font-weight: bold; text-transform: uppercase;  -webkit-font-smoothing: antialiased; ">Assine Agora</a></td>
-                            </tr>
-                          </table></td>
-                      </tr>
-                    </table></td>
-                  
-                  <!-- lado direito -->
-                  
-                </tr>
-              </table></td>
-            <!-- linha duas colunas: FIM -->
-            <tr>
-              <td bgcolor="#ffffff" height="3px" style="border-bottom: dotted 1px #a7a7a7;"><br>
-                &nbsp; </td>
-            </tr>
-            <!--linha duas colunas -->
-            
-          </tr>
-			  <tr>
-            <td bgcolor="#ffffff" align="center" valign="top" style="padding: 0 25px 0px 25px;"><table cellspacing="0" cellpadding="0" border="0" width="100%">
-                <tr> 
-                  
-                  <!--lado esquerdo -->
-                  <td bgcolor="#FFFFFF" width="50%" class="stack-column-center"
-                      style="border-top: 10px solid #ffffff;"><table cellspacing="0" cellpadding="0" border="0">
-                      <tr><td align="center"><font style="font-family: 'Lato', Arial, Trebuchet, Calibri, sans-serif; font-size: 24px; mso-height-rule: exactly; color: #212121; text-align: center; text-transform: uppercase;"> <strong>Impresso</strong></font><br><font style="font-family: 'Lato', Arial, Trebuchet, Calibri, sans-serif; font-size: 14px; mso-height-rule: exactly; color: #212121; text-align: center; text-transform: uppercase;">Fins de semana + Digital</font></td>
-                    </tr>
-                      <tr>
-                        <td><img width="273"
-                              src="https://assine.estadao.com.br/mkt/Brindes-Base-fev-19/miolo-imp-dig-24.jpg"
-                              alt="Estadão" title="Estadão" border="0" display="block"></td>
-                      </tr>
-                      <tr>
-                          <td align="center"><br>
-                            <font style="font-family: 'Lato',  Arial, Trebuchet, Calibri, sans-serif;font-size: 14px; mso-height-rule: exactly; color: #7D7D7D; text-align: center; "> 
-                              <strike> De R$ 56,90/mês</strike> <br>
-                              Por R$ <span style=" color: #212121; font-size: 28px"><b>21,90</b></span>/mês </font><br>
-                            <font style="font-family:  'Lato', Arial, Trebuchet, Calibri, sans-serif;font-size: 16px; mso-height-rule: exactly; color: #005f93; text-align: center;">62% de desconto por 1 ano</font> <br>
-                            <br>
-                          </td>
-                        </tr>
-                      <tr>
-                        <td><table class="btn-assine" cellspacing="0" cellpadding="0" border="0" align="center"
-                              style="margin: auto;">
-                            <tr>
-                              <td style=" border-radius: 5px; background: #005f93"><a
-                                    href="https://assine.estadao.com.br/subscribe/estadao-impresso-em-casa-2190-multicash-am300866?utm_source=action-sales:email-mkt&utm_medium=email-mkt&utm_campaign=AlwaysOn:c&utm_content=link:briefing01-fevereiro20::07-botao-oferta-03-pontofrio&utm_term=::::"
-                                    target="_blank"
-                                    style="background: #005F93; border: 5px solid #005F93; padding: 12px 10px 12px;color: #ffffff; font-family: 'Lato', Arial, Trebuchet, Calibri, sans-serif;font-size: 13px; text-align: center; text-decoration: none; display: block; border-radius: 5px; font-weight: bold; text-transform: uppercase;  -webkit-font-smoothing: antialiased; ">Assine Agora</a></td>
-                            </tr>
-                          </table></td>
-                      </tr>
-                    </table></td>
-                  
-                  <!-- lado direito -->
-                  <td bgcolor="#FFFFFF" width="50%" class="stack-column-center"
-                      style="border-top: 10px solid #ffffff;"><table cellspacing="0" cellpadding="0" border="0">
-                      <tr>
-                      <td align="center"><font style="font-family: 'Lato', Arial, Trebuchet, Calibri, sans-serif; font-size: 24px; mso-height-rule: exactly; color: #212121; text-align: center; text-transform: uppercase;"> <strong>Digital</strong></font><br>
-                        <font style="font-family: 'Lato', Arial, Trebuchet, Calibri, sans-serif; font-size: 14px; mso-height-rule: exactly; color: #212121; text-align: center; text-transform: uppercase;">Básica</font></td>
-                    </tr>
-
-
-                      <tr>
-                        <td><img width="273px"
-                              src="https://assine.estadao.com.br/mkt/Brindes-Base-fev-19/miolo-dig-bas-14.jpg"
-                              alt="Estadão" title="Estadão" border="0" display="block"></td>
-                      </tr>
-                      <tr>
-                          <td align="center"><br>
-                            <font style="font-family: 'Lato',  Arial, Trebuchet, Calibri, sans-serif;font-size: 14px; mso-height-rule: exactly; color: #7D7D7D; text-align: center; "> 
-                              <strike> De R$ 9,90/mês</strike> <br>
-                              Por R$ <span style=" color: #212121; font-size: 28px"><b>0,99</b></span>/no 1º mês </font><br>
-                            <font style="font-family:  'Lato', Arial, Trebuchet, Calibri, sans-serif;font-size: 16px; mso-height-rule: exactly; color: #005f93; text-align: center;">90% de desconto*</font> <br>
-                            <br>
-                          </td>
-                        </tr>
-                      <tr>
-                        <td><table class="btn-assine" cellspacing="0" cellpadding="0" border="0" align="center"
-                              style="margin: auto;">
-                            <tr>
-                              <td style=" border-radius: 5px; background: #005f93"><a
-                                    href="https://assine.estadao.com.br/subscribe/estadao-digital-basica-099-990-am100883?utm_source=action-sales:email-mkt&utm_medium=email-mkt&utm_campaign=AlwaysOn:c&utm_content=link:briefing01-fevereiro20::08-botao-oferta-04-digital-basica&utm_term=::::"
-                                    target="_blank"
-                                    style="background: #005F93; border: 5px solid #005F93; padding: 12px 10px 12px;color: #ffffff; font-family: 'Lato', Arial, Trebuchet, Calibri, sans-serif;font-size: 13px; text-align: center; text-decoration: none; display: block; border-radius: 5px; font-weight: bold; text-transform: uppercase;  -webkit-font-smoothing: antialiased; ">Assine Agora</a></td>
-                            </tr>
-                          </table></td>
-                      </tr>
-                    </table></td>
-                </tr>
-              </table></td>
-            <!-- linha duas colunas: FIM -->
-            <tr>
-              <td bgcolor="#ffffff" height="3px" style="border-bottom: dotted 1px #a7a7a7;"><br>
-                &nbsp; </td>
-            </tr>
-            <!--linha duas colunas -->
-            
-          </tr>
-            <!-- linha duas colunas: FIM -->
-
-            <!-- miolo FIM -->
-
-            
-            <tr>
-              <td bgcolor="#ffffff" class="full-width-image" align="center"><a
-                  href="https://assine.estadao.com.br/subscribe/estadao-digital-completa-9990-aa100834?utm_source=action-sales:email-mkt&utm_medium=email-mkt&utm_campaign=AlwaysOn:c&utm_content=link:briefing01-fevereiro20::09-banner-digital-completa-anual&utm_term=::::"
-                  target="_blank"><br>
-                  <img src="https://assine.estadao.com.br/mkt/briefing01-fevereiro20/AA100834_rodape_01.jpg"
-                    alt="Va além da notícia" width="560" style="width: 100%; max-width: 560px; height: auto;"
-                    title="Va além da notícia" border="0" align="center" display="block"></a></td>
+                            href="https://assine.estadao.com.br/impresso-em-casa"
+                            target="_blank"><u>Impresso</u></a></span>&ensp;|&ensp;</span> <span
+                        style="font-family: 'Lato', Arial, Trebuchet, Calibri, sans-serif; font-size: 12px;  color: #282828; font-weight: normal;-webkit-font-smoothing:antialiased; text-align: center; text-transform: uppercase; "> Ligue e assine: <a style=" color: #282828; text-decoration: none;" href="tel:08000149000"><strong><span style="color: #282828; text-decoration: underline">0800 014
+                9000</span></strong></a> &ensp;|&ensp; </span> <span
+                        style="font-family: 'Lato', Arial, Trebuchet, Calibri, sans-serif; font-size: 12px;  color: #282828; font-weight: normal;-webkit-font-smoothing:antialiased; text-align: center; text-transform: uppercase; "> <img src="https://assine.estadao.com.br/mkt/email-oferta01-broadcast/icon-whats-13x13.jpg" alt="Whatsapp" title="Whatsapp"> <strong><span style="color: #282828"> <a style=" color: #282828; text-decoration: none;" href="https://wa.me/5511992482333" target="_blank"><u>Whatsapp</u></a></span></strong></span></td>
             </tr>
             <tr>
-              <td bgcolor="#ffffff"><br>
-                &nbsp;</td>
-            </tr>
-            <!-- BOTAO RODAPE -->
-           <tr>
-              <td bgcolor="#dedde1" align="center" valign="top" style="padding: 45px;">
-                <table cellspacing="0" cellpadding="0" border="0" width="100%" class="email-container">
-                  <tr>
-                    <td class="center-on-narrow" style="text-align: center;padding: 0px 10px 10px; ">
-                      <font
-                        style="font-family: 'Lato',  Arial, Trebuchet, Calibri, sans-serif; font-size: 18px; mso-height-rule: exactly; color: #2e2e2e; text-align: center; text-transform: uppercase;">
-                        <strong>Quer mais ofertas? O Estadão tem.</strong></font>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td width="100%" class="stack-column-center">
-                      <table class="btn-assine" cellspacing="0" cellpadding="0" border="0" align="center"
-                        style="margin: auto;">
-                        <tr>
-                          <td style="background-color: #006393; border-radius: 5px;"><a
-                              href="https://assine.estadao.com.br/remkt?utm_source=action-sales:email-mkt&utm_medium=email-mkt&utm_campaign=AlwaysOn:c&utm_content=link:briefing01-fevereiro20::10-banner-rodape-oferta&utm_term=::::" target="_blank"
-                              style="background: #005F93; border: 5px solid #005F93; padding: 12px 10px 12px;color: #ffffff; font-family: 'Lato', Arial, Trebuchet, Calibri, sans-serif;font-size: 13px; text-align: center; text-decoration: none; display: block; border-radius: 5px; font-weight: bold; text-transform: uppercase;  -webkit-font-smoothing: antialiased; ">Clique
-                              e descubra</a></td>
-                        </tr>
-                      </table>
-                    </td>
-                  </tr>
-                </table>
-              </td>
+              <td><br></td>
             </tr>
             <tr>
-              <td bgcolor="#F5F5F5">
-                <table align="center">
-                  <tr>
-                    <td bgcolor="#Ffffff">
-                      <table cellspacing="0" cellpadding="0" border="0" align="center" class="email-container">
-                        <tr>
-                          <td>&nbsp;</td>
-                        </tr>
-                        <tr>
-                          <td align="center"
-                            style="width: 100%;  font-size: 11px; font-family: 'Lato', Calibri, Helvetica, sans-serif; color: #888888; text-transform:uppercase;">
-                            <b style="color: #545454">Copyright 1995 - 2019 | Todos os
-                              direitos reservados</b> <br>
-                            S/A O Estado de S.Paulo - CNPJ: 61.533.949/0001-41 Av. Engenheiro Caetano Álvares, 55 </td>
-                        </tr>
-                        <tr>
-                          <td>&nbsp;</td>
-                        </tr>
-                      </table>
-                      <table cellspacing="0" cellpadding="0" border="0" align="center" width="600"
-                        class="email-container">
-                        <tr>
-                          <td align="center"><font style="font-size: 11px; font-family: 'Lato', Calibri, Helvetica, sans-serif; mso-height-rule: exactly; color: #888888; text-transform:uppercase;"> <strong style="color: #545454;">Televendas</strong><br>
-                          <a style=" color: #282828; text-decoration: none;" href="tel:08000149000"><u>0800 014 9000</u></a></font></td>
-                          <td align="center">
-                            <font
-                              style="font-size: 11px; font-family: 'Lato', Calibri, Helvetica, sans-serif; mso-height-rule: exactly; color: #888888; ">
-                              Segunda a Sexta das 08h às 19h.<br>
-                              Sábado das 08h às 14h.</font>
-                          </td>
-                          <td align="center">
-                            <font
-                        style="font-family: 'Lato', Arial, Trebuchet, Calibri, sans-serif; font-size: 12px;  color: #282828; font-weight: normal;-webkit-font-smoothing:antialiased; text-align: center; text-transform: uppercase; ">
-                        <img src="https://assine.estadao.com.br/mkt/email-oferta01-broadcast/icon-whats-13x13.jpg" alt="Whatsapp" title="Whatsapp"> 
-<strong><span style="color: #282828"> <a style=" color: #282828; text-decoration: none;" href="https://wa.me/5511992482333" target="_blank"><u>Whatsapp</u></a></span></strong></font>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td><br>
-                            &nbsp;</td>
-                        </tr>
-                      </table>
-                      <table cellspacing="0" cellpadding="0" border="0" align="center" width="600"
-                        class="email-container">
-                        <tr>
-                          <td align="center"
-                            style="width: 100%;  font-size: 11px; font-family: 'Lato', Calibri, Helvetica, sans-serif; mso-height-rule: exactly;  color: #888888; text-transform:uppercase;">
-                            <strong style="color: #545454">Formas de pagamento<br>
-                            </strong> <br></td>
-                        </tr>
-                      </table>
-                      <table cellspacing="0" cellpadding="0" border="0" align="center" width="600"
-                        class="email-container" bgcolor="#Ffffff">
-                        <tr>
-                          <td align="center" valign="top" style="padding: 0 25px 0px 25px;">
-                            <table cellspacing="0" cellpadding="0" border="0" width="100%">
-                              <tr>
-
-                                <!--lado esquerdo -->
-                                <td width="50%" class="stack-column-center" style="border-top: 10px solid #Ffffff;">
-                                  <table cellspacing="0" cellpadding="0" border="0" align="center">
-                                    <tr>
-                                      <td align="center">
-                                        <font
-                                          style="font-size: 11px; font-family: 'Lato', Calibri, Helvetica, sans-serif; mso-height-rule: exactly; line-height:13px; color: #888888; text-transform:uppercase;">
-                                          Cartões de crédito</font><br>
-                                        <img src="https://assine.estadao.com.br/mkt/imagens-rodape/cartoes.png"
-                                          alt="Cartões de crédito" style="max-width:236px" title="Cartões de crédito"
-                                          border="0" align="center">
-                                      </td>
-                                    </tr>
-                                  </table>
-                                </td>
-
-                                <!-- lado direito -->
-                                <td width="50%" class="stack-column-center" style="border-top: 10px solid #Ffffff;">
-                                  <table cellspacing="0" cellpadding="0" border="0" align="center">
-                                    <tr>
-                                      <td align="center">
-                                        <font
-                                          style="font-size: 11px; font-family: 'Lato', Calibri, Helvetica, sans-serif; mso-height-rule: exactly; line-height:13px; color: #888888; text-transform:uppercase;">
-                                          Débito em conta</font><br>
-                                        <img src="https://assine.estadao.com.br/mkt/imagens-rodape/bancos.png"
-                                          alt="Débito em conta" style="max-width:236px" title="Débito em conta"
-                                          border="0" align="center">
-                                      </td>
-                                    </tr>
-                                  </table>
-                                </td>
-                              </tr>
-                            </table>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td><br>
-                            &nbsp;</td>
-                        </tr>
-                      </table>
-                      <table align="center" border="0" cellpadding="0" cellspacing="0"
-                        style="max-width: 540px; margin: 0px auto;">
-                        <tr>
-                          <td style="padding: 0px 15px">
-                            <p
-                              style="text-align: left; font-family: 'Lato',  Arial, Trebuchet, Calibri, sans-serif; font-size: 11px; line-height: 14px color: #BFBFBF;">
-                              <span style="color: #ffffff">action-sales<br></span>
-								*Os detalhes da assinatura constam no descritivo da oferta
-                              no site. Imagens meramente ilustrativas. Ofertas válidas por
-                              3 dias. Condição de pagamento da assinatura: cartão de
-                              crédito e débito em conta. Preço válido para o Estado de São
-                              Paulo. Local de entrega sujeito à confirmação. A entrega do
-                              jornal impresso ocorrerá em até 7 (sete) dias úteis, após a
-                              análise de crédito e confirmação do pagamento. Em caso de
-                              dúvida, entre em contato com a Central de Atendimento: <a
-                                href="https://meu.estadao.com.br/assinante/formulario-contato?utm_source=action-sales:email-mkt&utm_medium=email-mkt&utm_campaign=AlwaysOn:c&utm_content=link:briefing01-fevereiro20::11-form&utm_term=::::" target="_blank"
-                                style="text-decoration:underline; color:#C0C0C0;">www.assinante.estadao.com.br/formulario-contato</a>.<br>
-                              **Valor sugestivo para economia diária, referindo-se ao
-                              valor promocional do primeiro mês de assinatura.</p>
-							  <img src="https://pixel.app.returnpath.net/pixel.gif?r=d928976d49a0ac1da20e53b9d7b88f0ff879ca1b" width="1" height="1" /><img src="https://pixel.app.returnpath.net/pixel.gif?r=d928976d49a0ac1da20e53b9d7b88f0ff879ca1b&c=variaveldecampanha &s=variaveldeusuario" width="1" height="1" /> <span style="color: #ffffff; font-size: 10px"> Matching ID</span>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td><br>
-                            &nbsp;</td>
-                        </tr>
-                      </table>
-                    </td>
-                  </tr>
-                </table>
-
-                <!-- RODAPE: FIM -->
-              </td>
+              <td class="full-width-image" style="width: 100%; text-align: center; background-color: #ffffff; align-content: center; margin: auto; padding: 0px"><a href="https://assine.estadao.com.br/subscribe/estadao-impresso-em-casa-2190-turma-da-monica-am300855" target="_blank"> <img src="http://assine.estadao.com.br/mkt/briefing07-marco20/AM300855_11.jpg"
+                          alt="Va além da notícia" style="width: 100%; max-width: 560px; height: auto; border: none;" title="Va além da notícia" ></a></td>
             </tr>
-            <!-- BOTAO RODAPE -->
+            <tr>
+              <td style="text-align: center; background-color: #ffffff"><span
+                        style="font-family: 'Lato', Arial, Trebuchet, Calibri, sans-serif; letter-spacing:0px;font-size: 20px;  color: #006393; font-weight: normal;-webkit-font-smoothing:antialiased;text-align: center; text-transform: uppercase; "> <strong><br>
+                O que o Estadão tem para você:</strong> </span><br>
+                <br></td>
+            </tr>
           </table>
+          
+          </td>
+      </tr>
+      
+     
+      <tr>
+        <td style="background-color: #ffffff; vertical-align: middle; margin-left: auto; margin-right: auto; padding: 0 25px 0px 25px; width: 600px"><table style="border: none;  border-spacing: 0; border-collapse: collapse; width: 100%" >
+            <tr> 
+              
+              
+              <td class="stack-column-center"
+                      style="border-top: 10px solid #ffffff; background-color: #ffffff; width: 50%"><table style="border: none;  border-spacing: 0; border-collapse: collapse;" >
+                  <tr>
+                    <td style="width: 50%; vertical-align: middle; margin-left: auto; margin-right: auto; padding-left: 4px; padding-right: 4px; text-align: center"><img
+                              src="https://assine.estadao.com.br/mkt/Base-modelo-email-fev2019/icone-1.png" style="max-width: 90px"
+                              alt="Estadão" title="Estadão"> <br>
+                      <br>
+                      <span
+                              style="font-family: 'Lato', Arial, Trebuchet, Calibri, sans-serif; font-size: 15px;  color: #276693; font-weight: normal;-webkit-font-smoothing:antialiased; text-align: center; "> <strong> Informação de credibilidade</strong></span><br>
+                      <span
+                              style="font-family: 'Lato', Arial, Trebuchet, Calibri, sans-serif; font-size: 13px;  color: #414141; font-weight: normal;-webkit-font-smoothing:antialiased; text-align: center; "> Ganhador de vários prêmios, o Estadão tem a credibilidade
+                      que você procura.</span></td>
+                    <td style="width: 50%; vertical-align: middle; margin-left: auto; margin-right: auto; padding-left: 4px; padding-right: 4px; text-align: center"><img
+                              src="https://assine.estadao.com.br/mkt/Base-modelo-email-fev2019/icone-2.png" style="max-width: 90px"
+                              alt="Estadão" title="Estadão" > <br>
+                      <br>
+                      <span
+                              style="font-family: 'Lato', Arial, Trebuchet, Calibri, sans-serif; font-size: 15px;  color: #276693; font-weight: normal;-webkit-font-smoothing:antialiased; text-align: center; "> <strong>Colunistas exclusivos</strong></span><br>
+                      <span
+                              style="font-family: 'Lato', Arial, Trebuchet, Calibri, sans-serif; font-size: 13px;  color: #414141; font-weight: normal;-webkit-font-smoothing:antialiased; text-align: center; "> Conteúdos exclusivos para oferecer variedade de pontos de
+                      vista.</span></td>
+                  </tr>
+                </table></td>
+              
+             
+              <td class="stack-column-center"
+                      style="border-top: 10px solid #ffffff; background-color: #ffffff; width: 50%"><table style="border: none;  border-spacing: 0; border-collapse: collapse;" >
+                  <tr>
+                    <td style="width: 50%; vertical-align: middle; margin-left: auto; margin-right: auto; padding-left: 4px; padding-right: 4px; text-align: center"><img
+                              src="https://assine.estadao.com.br/mkt/Base-modelo-email-fev2019/icone-3.png" style="max-width: 90px"
+                              alt="Estadão" title="Estadão"> <br>
+                      <br>
+                      <span
+                              style="font-family: 'Lato', Arial, Trebuchet, Calibri, sans-serif; font-size: 15px;  color: #276693; font-weight: normal;-webkit-font-smoothing:antialiased; text-align: center; "> <strong>Acesso multiplataforma</strong></span><br>
+                      <span
+                              style="font-family: 'Lato', Arial, Trebuchet, Calibri, sans-serif; font-size: 13px;  color: #414141; font-weight: normal;-webkit-font-smoothing:antialiased; text-align: center; "> Digital ou impresso, esteja sempre com o melhor do Estadão
+                      onde estiver.</span></td>
+                    <td style="width: 50%; vertical-align: middle; margin-left: auto; margin-right: auto; padding-left: 4px; padding-right: 4px; text-align: center"><img
+                              src="https://assine.estadao.com.br/mkt/Base-modelo-email-fev2019/icone-4.png" style="max-width: 90px"
+                              alt="Estadão" title="Estadão" > <br>
+                      <br>
+                      <span
+                              style="font-family: 'Lato', Arial, Trebuchet, Calibri, sans-serif; font-size: 15px;  color: #276693; font-weight: normal;-webkit-font-smoothing:antialiased; text-align: center; "> <strong>Suspensão temporária</strong></span><br>
+                      <span
+                              style="font-family: 'Lato', Arial, Trebuchet, Calibri, sans-serif; font-size: 13px;  color: #414141; font-weight: normal;-webkit-font-smoothing:antialiased; text-align: center; "> Muitas facilidades para você resolver tudo o que precisa no
+                      Meu Estadão.</span></td>
+                  </tr>
+                </table></td>
+            </tr>
+          </table></td>
+      </tr>
+     
+      <tr>
+        <td style="background-color: #ffffff;  border-bottom: dotted 1px #a7a7a7;"><br>
+          &nbsp; </td>
+      </tr>
+      
+      <tr>
+            <td style="padding: 0 25px 0px 25px; background-color: #ffffff; margin-left: auto; margin-right: auto; vertical-align: top;">
+			    <table style="border: none;  border-spacing: 0; border-collapse: collapse; width: 100%">
+            	    <tr>
+				    <td class="stack-column-center" style="border-top: 10px solid #ffffff; background-color: #ffffff; width: 50%">
+					    <table style="border: none;   border-spacing: 0; border-collapse: collapse;">
+                            <tr>
+                            <td style="margin-left: auto; margin-right: auto; text-align: center">
+                                <span style="font-family: 'Lato', Arial, Trebuchet, Calibri, sans-serif; font-size: 24px; color: #212121; text-align: center; text-transform: uppercase; -webkit-font-smoothing: antialiased; font-weight: 900">
+                                    <strong>IMPRESSO</strong>
+                                </span>
+                                <br>
+                                <span style="font-family: 'Lato', Arial, Trebuchet, Calibri, sans-serif; font-size: 14px; color: #212121; text-align: center; text-transform: uppercase;">FINS DE SEMANA + DIGITAL
+</span></td>
+                            </tr>
+                            <tr><td>
+                                <img style="width: 273px; border: none"
+                                src="https://assine.estadao.com.br/mkt/Brindes-Base-fev-19/miolo-imp-dig-26.jpg" alt="Estadão" title="Estadão">
+                            </td></tr>
+                            <tr><td style="margin-left: auto; margin-right: auto; text-align: center"><br>
+                                <span style="font-family: 'Lato',  Arial, Trebuchet, Calibri, sans-serif;font-size: 14px; color: #7D7D7D; text-align: center; "> 
+                                    <span style="text-decoration:line-through"> De R$ 56,90/mês</span> <br>Por R$ <span style=" color: #212121; font-size: 28px"><strong>21,90</strong></span>/mês </span><br>
+                                <span style="font-family:  'Lato', Arial, Trebuchet, Calibri, sans-serif;font-size: 16px; color: #005f93; text-align: center;">62% de desconto por 1 ano</span><br><br>
+                                </td></tr>
+                            <tr><td  style="text-align: center; margin-left: auto; margin-right: auto; background-color: #ffffff;">
+                                <table class="btn-assine" style="margin: auto; border: none;  border-spacing: 0; border-collapse: collapse;">
+                                    <tr><td style=" border-radius: 5px; background: #43bd40">
+                                        <a href="https://assine.estadao.com.br/subscribe/estadao-impresso-em-casa-2190-smartwatch-am300896"
+                                        target="_blank"
+                                        style="background: #43bd40; border: 5px solid #43bd40; padding: 12px 10px 12px;color: #ffffff; font-family: 'Lato', Arial, Trebuchet, Calibri, sans-serif;font-size: 13px; text-align: center; text-decoration: none; display: block; border-radius: 5px; font-weight: bold; text-transform: uppercase;  -webkit-font-smoothing: antialiased; ">Assine Agora</a>
+                                  </td></tr>
+                                </table>
+                            </td></tr>
+					</table>
+				</td>
+        
+				<td class="stack-column-center" style="border-top: 10px solid #ffffff; background-color: #ffffff; width: 50%">
+					<table style="border: none;  border-spacing: 0; border-collapse: collapse;">
+						<tr>
+                            <td style="margin-left: auto; margin-right: auto; text-align: center">
+                                <span style="font-family: 'Lato', Arial, Trebuchet, Calibri, sans-serif; font-size: 24px; color: #212121; text-align: center; text-transform: uppercase; -webkit-font-smoothing: antialiased; font-weight: 900">
+                                    <strong>IMPRESSO</strong>
+                                </span>
+                                <br>
+                                <span style="font-family: 'Lato', Arial, Trebuchet, Calibri, sans-serif; font-size: 14px; color: #212121; text-align: center; text-transform: uppercase;">FINS DE SEMANA + DIGITAL
+</span></td>
+                            </tr>
+						<tr><td>
+							<img style="width: 273px; border: none" src="https://assine.estadao.com.br/mkt/Brindes-Base-fev-19/miolo-imp-dig-25.jpg" alt="Estadão" title="Estadão" >
+						</td></tr>
+						<tr><td style="margin-left: auto; margin-right: auto; text-align: center">
+							<br><span style="font-family: 'Lato',  Arial, Trebuchet, Calibri, sans-serif;font-size: 14px; color: #7D7D7D; text-align: center; "> <span style="text-decoration:line-through"> De R$ 56,90/mês</span> <br>
+							Por R$ <span style=" color: #212121; font-size: 28px"><strong>21,90</strong></span>/mês </span><br>
+							<span style="font-family:  'Lato', Arial, Trebuchet, Calibri, sans-serif;font-size: 16px; color: #005f93; text-align: center;">62% de desconto por 1 ano</span> <br><br>
+						</td></tr>
+						<tr><td  style="text-align: center; margin-left: auto; margin-right: auto; background-color: #ffffff;">
+							<table class="btn-assine" style="margin: auto; border: none;  border-spacing: 0; border-collapse: collapse;">
+								<tr><td style=" border-radius: 5px; background: #43bd40"><a
+                                    href="https://assine.estadao.com.br/subscribe/estadao-impresso-em-casa-2190-netflix-am300897"
+                                    target="_blank"
+                                    style="background: #43bd40; border: 5px solid #43bd40; padding: 12px 10px 12px;color: #ffffff; font-family: 'Lato', Arial, Trebuchet, Calibri, sans-serif;font-size: 13px; text-align: center; text-decoration: none; display: block; border-radius: 5px; font-weight: bold; text-transform: uppercase;  -webkit-font-smoothing: antialiased; ">Assine Agora</a>
+							  </td></tr>
+							</table>
+						</td></tr>
+					</table>
+				</td>
+			</tr>
+          </table>
+          </td>
+          </tr>
+          <tr>
+            <td style="border-bottom: dotted 1px #a7a7a7; background-color: #ffffff; height: 3px"><br>
+              &nbsp; </td>
+          </tr>
+      
+      <tr>
+            <td style="padding: 0 25px 0px 25px; background-color: #ffffff; margin-left: auto; margin-right: auto; vertical-align: top; width: 600px">
+			    <table style="border: none;  border-spacing: 0; border-collapse: collapse; width: 100%">
+            	    <tr>
+				    <td class="stack-column-center" style="border-top: 10px solid #ffffff; background-color: #ffffff; width: 273px">
+					    <table style="border: none;  border-spacing: 0; border-collapse: collapse;">
+                            <tr>
+                            <td style="margin-left: auto; margin-right: auto; text-align: center">
+                                <span style="font-family: 'Lato', Arial, Trebuchet, Calibri, sans-serif; font-size: 24px; color: #212121; text-align: center; text-transform: uppercase; -webkit-font-smoothing: antialiased; font-weight: 900">
+                                    <strong>IMPRESSO</strong>
+                                </span>
+                                <br>
+                                <span style="font-family: 'Lato', Arial, Trebuchet, Calibri, sans-serif; font-size: 14px; color: #212121; text-align: center; text-transform: uppercase;">FINS DE SEMANA + DIGITAL
+</span></td>
+                            </tr>
+                            <tr><td>
+                                <img style="width: 273px; border: none"
+                                src="https://assine.estadao.com.br/mkt/Brindes-Base-fev-19/miolo-imp-dig-13.jpg" alt="Estadão" title="Estadão">
+                            </td></tr>
+                            <tr><td style="margin-left: auto; margin-right: auto; text-align: center"><br>
+                                <span style="font-family: 'Lato',  Arial, Trebuchet, Calibri, sans-serif;font-size: 14px; color: #7D7D7D; text-align: center; "> 
+                                    <span style="text-decoration:line-through"> De R$ 56,90/mês</span> <br>Por R$ <span style=" color: #212121; font-size: 28px"><strong>21,90</strong></span>/mês </span><br>
+                                <span style="font-family:  'Lato', Arial, Trebuchet, Calibri, sans-serif;font-size: 16px; color: #005f93; text-align: center;">62% de desconto por 1 ano</span><br><br>
+                                </td></tr>
+                            <tr><td  style="text-align: center; margin-left: auto; margin-right: auto; background-color: #ffffff;">
+                                <table class="btn-assine" style="margin: auto; border: none;  border-spacing: 0; border-collapse: collapse;">
+                                    <tr><td style=" border-radius: 5px; background: #43bd40">
+                                        <a href="https://assine.estadao.com.br/subscribe/estadao-impresso-em-casa-2190-superinteressante-am300852"
+                                        target="_blank"
+                                        style="background: #43bd40; border: 5px solid #43bd40; padding: 12px 10px 12px;color: #ffffff; font-family: 'Lato', Arial, Trebuchet, Calibri, sans-serif;font-size: 13px; text-align: center; text-decoration: none; display: block; border-radius: 5px; font-weight: bold; text-transform: uppercase;  -webkit-font-smoothing: antialiased; ">Assine Agora</a>
+                                  </td></tr>
+                                </table>
+                            </td></tr>
+					</table>
+				</td>
+              
+				<td class="stack-column-center" style="border-top: 10px solid #ffffff; background-color: #ffffff; width: 273px">
+					<table style="border: none;  border-spacing: 0; border-collapse: collapse;">
+						<tr><td style="margin-left: auto; margin-right: auto; text-align: center">
+							<span style="font-family: 'Lato', Arial, Trebuchet, Calibri, sans-serif; font-size: 24px; color: #212121; text-align: center; text-transform: uppercase; -webkit-font-smoothing: antialiased; font-weight: 900"><strong>Impresso</strong></span><br>
+							<span style="font-family: 'Lato', Arial, Trebuchet, Calibri, sans-serif; font-size: 14px; color: #212121; text-align: center; text-transform: uppercase;">Fins de semana + Digital</span>
+						</td></tr>
+						<tr><td>
+							<img style="width: 273px; border: none" src="https://assine.estadao.com.br/mkt/Brindes-Base-fev-19/miolo-imp-dig-01.jpg" alt="Estadão" title="Estadão" >
+						</td></tr>
+						<tr><td style="margin-left: auto; margin-right: auto; text-align: center">
+							<br><span style="font-family: 'Lato',  Arial, Trebuchet, Calibri, sans-serif;font-size: 14px; color: #7D7D7D; text-align: center; "> <span style="text-decoration:line-through"> De R$ 56,90/mês</span> <br>
+							Por R$ <span style=" color: #212121; font-size: 28px"><strong>21,90</strong></span>/mês </span><br>
+							<span style="font-family:  'Lato', Arial, Trebuchet, Calibri, sans-serif;font-size: 16px; color: #005f93; text-align: center;">62% de desconto por 1 ano</span> <br><br>
+						</td></tr>
+						<tr><td  style="text-align: center; margin-left: auto; margin-right: auto; background-color: #ffffff;">
+							<table class="btn-assine" style="margin: auto; border: none;  border-spacing: 0; border-collapse: collapse;">
+								<tr><td style=" border-radius: 5px; background: #43bd40"><a
+                                    href="https://assine.estadao.com.br/subscribe/estadao-impresso-em-casa-2190-outback-am300850"
+                                    target="_blank"
+                                    style="background: #43bd40; border: 5px solid #43bd40; padding: 12px 10px 12px;color: #ffffff; font-family: 'Lato', Arial, Trebuchet, Calibri, sans-serif;font-size: 13px; text-align: center; text-decoration: none; display: block; border-radius: 5px; font-weight: bold; text-transform: uppercase;  -webkit-font-smoothing: antialiased; ">Assine Agora</a>
+							  </td></tr>
+							</table>
+						</td></tr>
+					</table>
+				</td>
+			</tr>
+          </table>
+          </td>
+          </tr>
+          <tr>
+            <td style="border-bottom: dotted 1px #a7a7a7; background-color: #ffffff; height: 3px"><br>
+              &nbsp; </td>
+          </tr>
+      
+      
+      
+      <tr>
+        <td class="full-width-image" style="width: 600px; text-align: center; background-color: #ffffff; align-content: center; margin: auto; padding: 0px"><a
+                  href="https://assine.estadao.com.br/subscribe/estadao-impresso-em-casa-5290-boticario-am101044"
+                  target="_blank"><br>
+          <img src="https://assine.estadao.com.br/mkt/briefing07-marco20/am101044_02.jpg"
+                     alt="Va além da notícia" style="width: 100%; max-width: 560px; height: auto; border: none;" title="Va além da notícia"></a></td>
+      </tr>
+      <tr>
+        <td style="border-bottom: dotted 1px #a7a7a7; background-color: #ffffff; height: 1px">&nbsp;</td>
+      </tr>
+      <tr>
+        <td class="full-width-image" style="width: 600px; text-align: center; background-color: #ffffff; align-content: center; margin: auto; padding: 0px"><a
+                  href="https://assine.estadao.com.br/subscribe/estadao-digital-completa-9990-smartwatch-aa100844"
+                  target="_blank"><br>
+          <img src="https://assine.estadao.com.br/mkt/briefing07-marco20/AA100844_rodape_05.jpg"
+                     alt="Va além da notícia" style="width: 100%; max-width: 560px; height: auto; border: none;" title="Va além da notícia"></a></td>
+      </tr>
+      <tr>
+        <td style="background-color: #ffffff"><br>
+          &nbsp;</td>
+      </tr>
+     
+      
+            
+		<tr>
+        <td>
+          
+          <table style="background-color: #dedede; margin-left: auto; margin-right: auto; width: 600px; border-spacing: 0; border-collapse: collapse;" class="email-container">
+            <tbody>
+              <tr>
+                <td style="font-size: 22px; height: 20px ">&nbsp;<br></td>
+              </tr><tr>
+        <td style="width: 600px;  margin-left: auto; margin-right: auto; vertical-align: top; background-color: #dedede; text-align: center; padding: 0px 8px">
+			<span style="font-family: 'Lato',  Arial, Trebuchet, Calibri, sans-serif; font-size: 18px; color: #2e2e2e; text-align: center; text-transform: uppercase;"> <strong>Quer mais ofertas? O Estadão tem.</strong></span></td>
+            </tr>
+				<tr>
+                <td style="font-size: 12px; height: 10px ">&nbsp;<br></td>
+              </tr>
+              <tr>
+                <td  style="text-align: center; margin-left: auto; margin-right: auto; background-color: #dedede "><table class="btn-assine" style="margin: auto; border: none;  border-spacing: 0; border-collapse: collapse;">
+                  <tr>
+                    <td style=" border-radius: 5px; background: #43bd40"><a
+                              href="https://assine.estadao.com.br/remkt" target="_blank"
+                              style="background: #43bd40; border: 5px solid #43bd40; padding: 12px 10px 12px;color: #ffffff; font-family: 'Lato', Arial, Trebuchet, Calibri, sans-serif;font-size: 13px; text-align: center; text-decoration: none; display: block; border-radius: 5px; font-weight: bold; text-transform: uppercase;  -webkit-font-smoothing: antialiased; ">Clique
+                      e descubra</a></td>
+                  </tr>
+                </table></td>
+              </tr>
+              <tr>
+                <td style="font-size: 22px; height: 20px" >&nbsp;<br></td>
+              </tr>
+            </tbody>
+          </table>
+          
+          </td>
+      </tr>
+		<tr><td>
+			<table style="background-color: #ffffff; margin-left: auto; margin-right: auto; width: 600px; border-spacing: 0; border-collapse: collapse;" class="email-container">
+		<tr><td style="background-color: #ffffff; text-align: center; font-size: 11px; line-height: 17px; font-family: 'Lato', Calibri, Helvetica, sans-serif; color: #888888; text-transform:uppercase; padding: 25px 5px 10px 5px">
+			<strong style="color: #545454">Copyright 1995 - 2019 | Todos os
+                      direitos reservados</strong> <br>
+                      S/A O Estado de S.Paulo - CNPJ: 61.533.949/0001-41 Av. Engenheiro Caetano Álvares, 55 
+			</td></tr>
+		<tr><td style="margin-left: auto; margin-right: auto;">
+			<table style="margin-left: auto; margin-right: auto; border-spacing: 0; border-collapse: collapse; width: 100%"  class="email-container">
+                  <tr>
+                    <td class="stack-column-center" style="margin-left: auto; margin-right: auto; text-align: center"><span style="font-size: 11px; font-family: 'Lato', Calibri, Helvetica, sans-serif; color: #888888; text-transform:uppercase;"> <strong style="color: #545454;">Televendas</strong><br>
+                      <a style=" color: #282828; text-decoration: none;" href="tel:08000149000"><u>0800 014 9000</u></a></span></td>
+                    <td class="stack-column-center" style="margin-left: auto; margin-right: auto; text-align: center"><span
+                              style="font-size: 11px; font-family: 'Lato', Calibri, Helvetica, sans-serif; color: #888888; "> Segunda a Sexta das 08h às 19h.<br>
+                      Sábado das 08h às 14h.</span></td>
+                    <td class="stack-column-center" style="margin-left: auto; margin-right: auto; text-align: center"><span
+                        style="font-family: 'Lato', Arial, Trebuchet, Calibri, sans-serif; font-size: 12px;  color: #282828; font-weight: normal;-webkit-font-smoothing:antialiased; text-align: center; text-transform: uppercase; "> <img src="https://assine.estadao.com.br/mkt/email-oferta01-broadcast/icon-whats-13x13.jpg" alt="Whatsapp" title="Whatsapp"> <strong><span style="color: #282828"> <a style=" color: #282828; text-decoration: none;" href="https://wa.me/5511992482333" target="_blank"><u>Whatsapp</u></a></span></strong></span></td>
+                  </tr>
+                  
+                </table>
+			</td></tr>
+		<tr><td style="background-color: #ffffff; width: 600px; text-align: center; font-size: 11px; line-height: 17px; font-family: 'Lato', Calibri, Helvetica, sans-serif; color: #888888; text-transform:uppercase; padding: 25px 0px 5px 0px; margin-left: auto; margin-right: auto;">
+			<strong style="color: #545454">Formas de pagamento</strong> <br>
+                       
+			</td></tr>
+		<tr><td style="margin-left: auto; margin-right: auto;">
+			<table style="margin-left: auto; margin-right: auto; border-spacing: 0; border-collapse: collapse; width: 100%"  class="email-container">
+                  <tr>
+                    <td class="stack-column-center" style="margin-left: auto; margin-right: auto; text-align: center">
+						<span style="font-size: 11px; font-family: 'Lato', Calibri, Helvetica, sans-serif; line-height:13px; color: #888888; text-transform:uppercase;"> Cartões de crédito</span><br>
+						<img src="https://assine.estadao.com.br/mkt/imagens-rodape/cartoes.png" alt="Cartões de crédito" style="max-width:236px" title="Cartões de crédito"></td>
+                    <td class="stack-column-center" style="margin-left: auto; margin-right: auto; text-align: center">
+						<span style="font-size: 11px; font-family: 'Lato', Calibri, Helvetica, sans-serif; line-height:13px; color: #888888; text-transform:uppercase;"> Débito em conta</span><br>
+						<img src="https://assine.estadao.com.br/mkt/imagens-rodape/bancos.png" alt="Débito em conta" style="max-width:236px" title="Débito em conta"></td>
+                    
+                  </tr>
+                  
+                </table>
+			</td></tr>
+				
+		<tr><td style="background-color: #ffffff; padding: 5px 25px">
+			<p style="text-align: left; font-family: 'Lato',  Arial, Trebuchet, Calibri, sans-serif; font-size: 11px; line-height: 14px; color: #BFBFBF;">
+				<span style="color: #ffffff">disparador<br></span> 
+			*Os detalhes da assinatura constam no descritivo da oferta no site. Imagens meramente ilustrativas. Ofertas válidas por 3 dias. Condição de pagamento da assinatura: cartão de crédito e débito em conta. Preço válido para o Estado de São Paulo. Local de entrega sujeito à confirmação. A entrega do jornal impresso ocorrerá em até 7 (sete) dias úteis, após a análise de crédito e confirmação do pagamento. Em caso de dúvida, entre em contato com a Central de Atendimento: <a href="https://assinante.estadao.com.br/formulario-contato" target="_blank" style="text-decoration:underline; color:#C0C0C0;">www.assinante.estadao.com.br/formulario-contato</a>.<br>
+			**Valor sugestivo para economia diária, referindo-se ao valor promocional do primeiro mês de assinatura.</p>
+			
+                      <img alt="pixel" src="https://pixel.app.returnpath.net/pixel.gif?r=d928976d49a0ac1da20e53b9d7b88f0ff879ca1b" width="1" height="1" /><img src="https://pixel.app.returnpath.net/pixel.gif?r=d928976d49a0ac1da20e53b9d7b88f0ff879ca1b&c=variaveldecampanha&s=variaveldeusuario" width="1" height="1" alt="pixel" /> <span style="color: #ffffff; font-size: 10px"> Matching ID</span>
+			</td></tr>
+	</table>
+			</td></tr>
+      
+    </table>
+    
+    </td>
+  </tr>
+  
+</table>
 
-          <!-- tabela 2 FIM -->
-        </center>
-      </td>
-    </tr>
-  </table>
-  <!-- tabela 1 (mãe) FIM-->
 </body>
-
 </html>
